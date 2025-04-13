@@ -1,0 +1,30 @@
+Xft.dpi: 120
+
+! Background and Foreground
+*background:   #171421
+*foreground:   #c4c4b5
+*cursorColor:  #f6f6ec
+
+! ANSI Color 0-7
+*color0:  #191919
+*color1:  #f3005f
+*color2:  #97e023
+*color3:  #fa8419
+*color4:  #9c64fe
+*color5:  #f3005f
+*color6:  #57d1ea
+*color7:  #c4c4b5
+
+! Bright Colors (8-15)
+*color8:  #615e4b
+*color9:  #f3005f
+*color10: #97e023
+*color11: #dfd561
+*color12: #9c64fe
+*color13: #f3005f
+*color14: #57d1ea
+*color15: #f6f6ee
+
+! Selection colors (if needed for your terminal)
+*selection_background: #343434
+*selection_foreground: #191919
