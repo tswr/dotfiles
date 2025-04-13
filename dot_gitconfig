@@ -1,0 +1,21 @@
+[core]
+	editor = nvim
+	precomposeunicode = true
+	quotepath = false
+	eol = lf
+	autocrlf = false
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	lp = log -p
+	dt = difftool
+	df = diff
+	slog = log --pretty=format:\"%h  %ad  %s  (%an)\" --date=relative
+[diff]
+	tool = nvim -d
+[difftool]
+	prompt = false
