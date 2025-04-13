@@ -71,9 +71,9 @@ Dotfiles are managed with [chezmoi](https://www.chezmoi.io/) in this repo.
     grub-mkconfig -o /boot/grub/grub.cfg
     ```
 1. Nvidia
-   ```
-   sudo pacman -S nvidia-open-dkms
-   ```
+    ```
+    sudo pacman -S nvidia-open-dkms
+    ```
 1. Utils
     ```
     sudo pacman -S base-devel git clang rsync neovim tmux
@@ -85,36 +85,36 @@ Dotfiles are managed with [chezmoi](https://www.chezmoi.io/) in this repo.
     sudo pacman -S pavucontrol
     ``` 
 1. AUR
-   ```
-   git clone https://aur.archlinux.org/yay.git
-   cd yay
-   makepkg -si
-   cd ..
-   rm -rf yay/
-   ```
+    ```
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+    cd ..
+    rm -rf yay/
+    ```
 1. Wayland
     ```
     sudo pacman -S kitty wofi waybar ttf-font-awesome hyprsunset hyprlock hypridle hyprpaper swaync
     yay -S hyprshot
     ```
 1. Micromamba
-   ```
-   yay -S micromamba
-   ```
+    ```
+    yay -S micromamba
+    ```
 1. Tmux plugin manager
-   ```
-   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-   ```
+    ```
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    ```
 1. Dotfiles
-   ```
-   sudo pacman -S chezmoi
-   ```
-   Follow https://www.chezmoi.io/quick-start/.
+    ```
+    sudo pacman -S chezmoi
+    ```
+    Follow https://www.chezmoi.io/quick-start/.
 1. CUDA
 1. i3wm (outdated)
-   ```
-   sudo pacman -S luarocks feh polybar picom i3-wm i3lock dmenu xorg-xrandr redshift
-   ```
+    ```
+    sudo pacman -S luarocks feh polybar picom i3-wm i3lock dmenu xorg-xrandr redshift
+    ```
 
 
 ## dependencies
