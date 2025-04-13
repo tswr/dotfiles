@@ -75,11 +75,15 @@ Dotfiles are managed with [chezmoi](https://www.chezmoi.io/) in this repo.
    sudo pacman -S nvidia-open-dkms
    ```
 1. Utils
-   ```
-   sudo pacman -S base-devel git clang rsync neovim tmux
-   sudo pacman -S zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions starship
-   sudo pacman -S eza bat fzf zoxide tldr btop neofetch ripgrep extra/bc fd less plocate man-db
-   ```
+    ```
+    sudo pacman -S base-devel git clang rsync neovim tmux
+    sudo pacman -S zsh zsh-autosuggestions zsh-syntax-highlighting zsh-completions starship
+    sudo pacman -S eza bat fzf zoxide tldr btop neofetch ripgrep extra/bc fd less plocate man-db
+    ```
+1. Audio
+    ```
+    sudo pacman -S pavucontrol
+    ``` 
 1. AUR
    ```
    git clone https://aur.archlinux.org/yay.git
