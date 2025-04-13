@@ -1,5 +1,7 @@
 # dotfiles
 
+Dotfiles are managed with [chezmoi](https://www.chezmoi.io/) in this repo.
+
 ## Installing Arch with dual boot
 1. Have Windows 11 installed before, make sure that its partitions are shrank so that Arch would fit.
 1. Download iso from https://archlinux.org/download/, validate, use balena etcher to flash.
