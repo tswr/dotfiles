@@ -1,0 +1,36 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$character"""
+
+add_newline = true
+
+[username]
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = '[$hostname](blue) '
+disabled = false
+
+[directory]
+format = '[$path](blue) '
+truncation_length = 5
+truncation_symbol = '…/'
+truncate_to_repo = false
+
+[git_branch]
+style = 'cyan'
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[git_status]
+style = 'cyan'
+
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[\$](bold green)'
+error_symbol = '[\$](bold red)'
