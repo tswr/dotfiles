@@ -100,6 +100,9 @@ Dotfiles are managed with [chezmoi](https://www.chezmoi.io/) in this repo.
 1. Micromamba
     ```
     yay -S micromamba
+    micromamba activate
+    micromamba install numpy pandas scipy matplotlib plotly jupyter ipython sklearn -c conda-forge
+    pip3 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
     ```
 1. Tmux plugin manager
     ```
