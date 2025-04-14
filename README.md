@@ -95,7 +95,7 @@ Dotfiles are managed with [chezmoi](https://www.chezmoi.io/) in this repo.
 1. Wayland
     ```
     sudo pacman -S kitty wofi waybar ttf-font-awesome hyprsunset hyprlock hypridle hyprpaper swaync
-    yay -S hyprshot
+    yay -S hyprshot themix-full-git
     ```
 1. Micromamba
     ```
