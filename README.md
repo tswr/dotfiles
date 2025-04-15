@@ -73,6 +73,7 @@ Dotfiles are managed with [chezmoi](https://www.chezmoi.io/) in this repo.
 1. Nvidia
     ```
     sudo pacman -S nvidia-open-dkms
+    sudo pacman -S cuda
     ```
 1. Utils
     ```
@@ -113,7 +114,6 @@ Dotfiles are managed with [chezmoi](https://www.chezmoi.io/) in this repo.
     sudo pacman -S chezmoi
     ```
     Follow https://www.chezmoi.io/quick-start/.
-1. CUDA
 1. i3wm (outdated)
     ```
     sudo pacman -S luarocks feh polybar picom i3-wm i3lock dmenu xorg-xrandr redshift
