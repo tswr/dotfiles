@@ -75,7 +75,7 @@ button:hover {
 }
 
 #workspaces button.urgent {
-    background-color: red;
+    background-color: #f3005f;
 }
 
 /*
