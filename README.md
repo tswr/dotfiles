@@ -114,6 +114,11 @@ Dotfiles are managed with [chezmoi](https://www.chezmoi.io/) in this repo.
     sudo pacman -S chezmoi
     ```
     Follow https://www.chezmoi.io/quick-start/.
+1. VSCode insiders
+    ```
+    sudo pacman -S gnome-keyring libsecret
+    yay -S visual-studio-code-insiders-bin
+    ```
 1. i3wm (outdated)
     ```
     sudo pacman -S luarocks feh polybar picom i3-wm i3lock dmenu xorg-xrandr redshift
