@@ -24,6 +24,9 @@ return {
           },
         },
       },
+      extensions = {
+        fzf = {}
+      }
     })
 
     telescope.load_extension("fzf")
@@ -85,6 +88,10 @@ return {
     vim.keymap.set("n", "<leader>ls", builtin.lsp_document_symbols, { desc = "Telescope document symbols" })
 
     vim.keymap.set("n", "<leader>fl", builtin.reloader, { desc = "Telescope reloader" })
+
+    vim.keymap.set("n", "<leader>fL", function()
+      builtin.find_files({ cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy") })
+    end, { desc = "Telescope find files in config" })
 
     vim.keymap.set("n", "<leader>gc", builtin.git_commits, { desc = "Telescope git commits" })
     vim.keymap.set("n", "<leader>gC", builtin.git_bcommits, { desc = "Telescope buffer git commits" })
