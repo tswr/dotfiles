@@ -3,7 +3,7 @@
 Dotfiles are managed with [chezmoi](https://www.chezmoi.io/) in this repo.
 
 ## Installing Arch with dual boot
-1. Have Windows 11 installed before, make sure that its partitions are shrank so that Arch would fit.
+1. Have Windows installed before, make sure that its partitions are shrank so that Arch would fit.
 1. Download iso from https://archlinux.org/download/, validate, use balena etcher to flash.
 1.In BIOS set secure boot to Other OS and boot from USB flash drive.
 1. Connect to wi-fi
@@ -95,8 +95,12 @@ Dotfiles are managed with [chezmoi](https://www.chezmoi.io/) in this repo.
     ```
 1. Wayland
     ```
-    sudo pacman -S kitty wofi waybar ttf-font-awesome hyprsunset hyprlock hypridle hyprpaper swaync
+    sudo pacman -S kitty hyprland wofi waybar ttf-font-awesome hyprsunset hyprlock hypridle hyprpaper swaync
     yay -S hyprshot themix-full-git
+    ```
+    On Fedora:
+    ```
+    sudo dnf install hyprland kitty wofi waybar hyprlock hypridle hyprpaper swaync
     ```
 1. Micromamba
     ```
@@ -112,6 +116,10 @@ Dotfiles are managed with [chezmoi](https://www.chezmoi.io/) in this repo.
 1. Dotfiles
     ```
     sudo pacman -S chezmoi
+    ```
+    On Fedora:
+    ```
+    sh -c "$(curl -fsLS get.chezmoi.io)"
     ```
     Follow https://www.chezmoi.io/quick-start/.
 1. VSCode insiders
