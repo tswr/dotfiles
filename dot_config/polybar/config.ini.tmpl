@@ -158,7 +158,11 @@ font-0 = MonoLisa:size=10
 ;   modules-right = ipc clock
 modules-left = xworkspaces xwindow
 ; modules-center =
+{{- if eq .chezmoi.osRelease.id "arch" }}
 modules-right = cpu memory system-nvidia-smi-gpu system-nvidia-smi-vram filesystem wlan eth xkeyboard date systray
+{{- else if eq .chezmoi.osRelease.id "fedora" }}
+modules-right = cpu memory filesystem wlan eth xkeyboard date systray
+{{- end }}
 
 ; The separator will be inserted between the output of each module
 ; This has the same properties as a label
@@ -306,7 +310,11 @@ cursor-scroll = ns-resize
 
 [bar/secondary]
 inherit = bar/primary
+{{- if eq .chezmoi.osRelease.id "arch" }}
 monitor = DP-4
+{{- else if eq .chezmoi.osRelease.id "fedora" }}
+monitor = DP-2
+{{- end }}
 modules-right = cpu memory filesystem wlan eth xkeyboard date
 
 ; This module is not active by default (to enable it, add it to one of the

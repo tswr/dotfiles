@@ -17,9 +17,20 @@ setopt HIST_REDUCE_BLANKS  # Remove extra blanks from commands
 # Allow # to be used in zsh
 setopt interactivecomments
 
+{{- if eq .chezmoi.osRelease.id "arch" }}
 export PATH=/opt/cuda/bin:$HOME/Android/Sdk/platform-tools:$HOME/.local/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/opt/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 export CUDA_HOME=/opt/cuda
+{{- else if eq .chezmoi.osRelease.id "fedora" }}
+export PATH=$HOME/Android/Sdk/platform-tools:$PATH
+export CUDA_HOME=/usr/local/cuda-12.8
+export TENSORRT_HOME=$HOME/TensorRT-10.9.0.34
+export PATH=${CUDA_HOME}/bin:${TENSORRT_HOME}/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=${CUDA_HOME}/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export LD_LIBRARY_PATH=${TENSORRT_HOME}/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+source $HOME/work-aliases.sh
+{{- end }}
 export EDITOR=nvim
 
 alias vim="nvim"
@@ -67,7 +78,11 @@ unset __mamba_setup
 
 # zsh-autosuggestions
 export ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd history completion)
+{{- if eq .chezmoi.osRelease.id "arch" }}
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+{{- else if eq .chezmoi.osRelease.id "fedora" }}
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+{{- end}}
 
 # zoxide
 eval "$(zoxide init zsh)"
@@ -75,7 +90,11 @@ alias cd=z
 
 # zsh-syntax-highlighting.zsh
 # should be sourced at the end of the .zshrc
+{{- if eq .chezmoi.osRelease.id "arch" }}
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{{- else if eq .chezmoi.osRelease.id "fedora" }}
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{{- end}}
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/tswr/.zshrc'
