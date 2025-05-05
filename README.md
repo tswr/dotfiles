@@ -101,7 +101,7 @@ Dotfiles are managed with [chezmoi](https://www.chezmoi.io/) in this repo.
     On Fedora:
     ```
     sudo dnf copr enable solopasha/hyprland
-    sudo dnf install hyprland kitty wofi waybar hyprlock hypridle hyprpaper swaync hyprsunset hyprshot
+    sudo dnf install hyprland kitty wofi waybar hyprlock hypridle hyprpaper swaync hyprsunset hyprshot fontawesome-fonts
     ```
 1. Micromamba
     ```
