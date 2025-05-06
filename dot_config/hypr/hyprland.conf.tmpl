@@ -103,7 +103,8 @@ $color15 = rgba(f6f6eeee)
 # exec-once = nm-applet &
 # exec-once = waybar & hyprpaper & firefox
 exec-once = waybar & hypridle & hyprsunset & swaync & hyprpaper
-
+exec-once = eval $(gnome-keyring-daemon --start) && export SSH_AUTH_SOCK
+exec-once = nm-applet
 
 #############################
 ### ENVIRONMENT VARIABLES ###
