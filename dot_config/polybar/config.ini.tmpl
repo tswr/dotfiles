@@ -158,10 +158,12 @@ font-0 = MonoLisa:size=10
 ;   modules-right = ipc clock
 modules-left = xworkspaces xwindow
 ; modules-center =
+{{- if eq .chezmoi.os "linux" }}
 {{- if eq .chezmoi.osRelease.id "arch" }}
 modules-right = cpu memory system-nvidia-smi-gpu system-nvidia-smi-vram filesystem wlan eth xkeyboard date systray
 {{- else if eq .chezmoi.osRelease.id "fedora" }}
 modules-right = cpu memory filesystem wlan eth xkeyboard date systray
+{{- end }}
 {{- end }}
 
 ; The separator will be inserted between the output of each module
@@ -310,10 +312,12 @@ cursor-scroll = ns-resize
 
 [bar/secondary]
 inherit = bar/primary
+{{- if eq .chezmoi.os "linux" }}
 {{- if eq .chezmoi.osRelease.id "arch" }}
 monitor = DP-4
 {{- else if eq .chezmoi.osRelease.id "fedora" }}
 monitor = DP-2
+{{- end }}
 {{- end }}
 modules-right = cpu memory filesystem wlan eth xkeyboard date
 

@@ -23,6 +23,7 @@
 
 # See https://wiki.hyprland.org/Configuring/Monitors/
 
+{{- if eq .chezmoi.os "linux" }}
 {{- if eq .chezmoi.osRelease.id "arch" }}
 monitor=DP-4,preferred,auto,1.3333333
 monitor=DP-5,preferred,auto,1.3333333
@@ -53,6 +54,7 @@ workspace=7,monitor:DP-2
 workspace=8,monitor:DP-2
 workspace=9,monitor:DP-2
 workspace=10,monitor:DP-2
+{{- end }}
 {{- end }}
 
 
