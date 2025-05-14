@@ -31,6 +31,8 @@ export LD_LIBRARY_PATH=${TENSORRT_HOME}/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH
 
 source $HOME/work-aliases.sh
 {{- end }}
+{{- else if eq .chezmoi.os "darwin"}}
+export PATH=$HOME/Library/Android/sdk/platform-tools/${PATH:+:${PATH}}
 {{- end }}
 export EDITOR=nvim
 
