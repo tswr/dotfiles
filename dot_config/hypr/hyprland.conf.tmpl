@@ -249,15 +249,8 @@ input {
     }
 }
 
-{{- if eq .chezmoi.osRelease.id "arch" }}
 # See https://wiki.hypr.land/Configuring/Gestures
 gesture = 3, horizontal, workspace
-{{- else if eq .chezmoi.osRelease.id "fedora" }}
-# https://wiki.hyprland.org/Configuring/Variables/#gestures
-gestures {
-    workspace_swipe = false
-}
-{{- end }}
 
 # Example per-device config
 # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
