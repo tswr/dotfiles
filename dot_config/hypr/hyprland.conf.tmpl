@@ -116,12 +116,11 @@ exec-once = nm-applet
 
 env = XCURSOR_SIZE,24
 env = HYPRCURSOR_SIZE,24
-
+env = MOZ_ENABLE_WAYLAND,1
 
 #####################
 ### LOOK AND FEEL ###
 #####################
-
 # Refer to https://wiki.hyprland.org/Configuring/Variables/
 
 # https://wiki.hyprland.org/Configuring/Variables/#general
@@ -352,17 +351,17 @@ bindl = , XF86AudioPrev, exec, playerctl previous
 # Example windowrule
 # windowrule = float,class:^(kitty)$,title:^(kitty)$
 
-# Ignore maximize requests from apps. You'll probably like this.
-windowrule = suppressevent maximize, class:.*
+# Suppress maximize events for all window classes
+windowrule = suppress_event maximize, match:class .*
 
-# Fix some dragging issues with XWayland
-windowrule = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
+# Fix some dragging issues with XWayland (no focus for matching windows)
+windowrule = no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:float 1, match:fullscreen 0, match:pin 0
 
-# Make chrome opaque
-windowrule = opacity 1.0 override 1.0 override, class:Google-chrome
-windowrule = opacity 1.0 override 1.0 override, class:google-chrome
-windowrule = opacity 1.0 override 1.0 override, class:chromium
-windowrule = opacity 1.0 override 1.0 override, class:eog
-windowrule = opacity 1.0 override 1.0 override, class:vlc
-windowrule = opacity 1.0 override 1.0 override, class:mpv
-
+# Make specific apps opaque (active and inactive opacity forced to 1.0)
+windowrule = opacity 1.0 override 1.0 override, match:class ^Google-chrome$
+windowrule = opacity 1.0 override 1.0 override, match:class ^google-chrome$
+windowrule = opacity 1.0 override 1.0 override, match:class ^chromium$
+windowrule = opacity 1.0 override 1.0 override, match:class ^eog$
+windowrule = opacity 1.0 override 1.0 override, match:class ^vlc$
+windowrule = opacity 1.0 override 1.0 override, match:class ^mpv$
+windowrule = opacity 1.0 override 1.0 override, match:class ^firefox$
