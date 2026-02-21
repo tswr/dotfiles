@@ -35,7 +35,7 @@ return {
     }
     lualine.setup({
       options = {
-        icons_enabled = false,
+        icons_enabled = true,
         theme = monokai_soda_theme,
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
@@ -57,6 +57,15 @@ return {
         lualine_b = { "branch" },
         lualine_c = { "diff", "diagnostics", "filename" },
         lualine_x = {
+          {
+            function()
+              return require("dap").status()
+            end,
+            cond = function()
+              return package.loaded["dap"] and require("dap").status() ~= ""
+            end,
+            icon = { "", color = { fg = "#e7c664" } },
+          },
           {
             lazy_status.updates,
             cond = lazy_status.has_updates,

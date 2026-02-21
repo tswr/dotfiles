@@ -77,8 +77,11 @@ return {
     vim.keymap.set(
       "n",
       "<leader>lD",
-      ":vsplit<CR> :lua vim.lsp.buf.definition()<CR>",
-      { desc = "Telescope lsp definitions in vsplit" }
+      function()
+        vim.cmd("vsplit")
+        vim.lsp.buf.definition()
+      end,
+      { desc = "LSP definition in vsplit" }
     )
     vim.keymap.set("n", "<leader>lr", builtin.lsp_references, { desc = "Telescope lsp references" })
     vim.keymap.set("n", "<leader>li", builtin.lsp_implementations, { desc = "Telescope lsp implementations" })

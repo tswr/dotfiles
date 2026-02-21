@@ -8,25 +8,26 @@ return {
     vim.o.timeoutlen = 500
   end,
   opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
     spec = {
       {
         mode = { "n", "v" },
+        { "<leader>a", group = "ai" },
+        { "<leader>d", group = "debug" },
         { "<leader>e", group = "nvim tree" },
         { "<leader>f", group = "find" },
         { "<leader>m", group = "meta" },
         { "<leader>g", group = "git" },
+        { "<leader>gh", group = "hunk" },
+        { "<leader>gt", group = "toggle" },
         { "<leader>w", group = "window" },
         { "<leader>l", group = "lsp" },
-        { "[",         group = "prev" },
-        { "]",         group = "next" },
-        { "g",         group = "goto" },
-        { "gs",        group = "surround" },
-        { "gc",        group = "comment" },
-        { "z",         group = "fold" },
-      }
+        { "[", group = "prev" },
+        { "]", group = "next" },
+        { "g", group = "goto" },
+        { "gs", group = "surround" },
+        { "gc", group = "comment" },
+        { "z", group = "fold" },
+      },
     },
   },
 }

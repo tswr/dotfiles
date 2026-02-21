@@ -26,6 +26,6 @@ return {
     })
     vim.keymap.set("n", "[c", function()
       context.go_to_context(vim.v.count1)
-    end, { silent = true }, { desc = "Jump to context" })
+    end, { silent = true, desc = "Jump to context" })
   end,
 }

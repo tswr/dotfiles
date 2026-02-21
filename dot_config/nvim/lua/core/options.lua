@@ -1,6 +1,3 @@
-# Set :Explore view to 3: tree style listing
-vim.cmd("let g:netrw_liststyle = 3")
-
 local set = vim.opt
 
 -- If in Insert, Replace or Visual mode put a message on the last line.
@@ -23,9 +20,6 @@ set.hlsearch = true
 
 -- Write the contents of the file, if it has been modified, on each `:next`, `:rewind`, `:last`, `:first`, ...
 set.autowrite = true
-
--- When on a buffer becomes hidden when it is |abandon|ed.
-set.hidden = true
 
 -- Highlight the text line of the cursor with CursorLine |hl-CursorLine|.
 set.cursorline = true
@@ -73,7 +67,7 @@ if vim.g.vscode then
   -- Vritual editing doesn't work well with vscode
 else
   -- Allow virtual editing in all modes.
-  set.virtualedit = "all"
+  set.virtualedit = "block"
 end
 
 -- When this option is set, the screen will not be redrawn while executing macros, registers and other commands that have not been typed.
