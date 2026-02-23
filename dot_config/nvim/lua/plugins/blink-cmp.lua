@@ -36,6 +36,12 @@ return {
           module = "blink-copilot",
           score_offset = 100,
           async = true,
+          transform_items = function(_, items)
+            for _, item in ipairs(items) do
+              item.detail = nil
+            end
+            return items
+          end,
           enabled = function()
             return not require("core.env").is_meta_infra()
           end,
@@ -52,6 +58,7 @@ return {
         show_without_menu = true,
       },
       menu = {
+        direction_priority = { 'n', 's' },
         draw = {
           columns = {
             { "kind_icon" },
