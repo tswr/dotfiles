@@ -1,5 +1,6 @@
 return {
   "supermaven-inc/supermaven-nvim",
+  cond = function() return not require("core.env").is_meta_infra() end,
   event = "InsertEnter",
   opts = {
     keymaps = {
