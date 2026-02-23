@@ -29,7 +29,7 @@ return {
       end,
     })
 
-    if string.find(vim.fn.expand(vim.fn.getcwd() or ""), "fbsource", 0) then
+    if require("core.env").is_fbsource() then
       local meta = require("meta.lsp")
       require("meta").setup({})
       local servers = {

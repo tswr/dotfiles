@@ -12,7 +12,7 @@ return {
     }
     vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
       callback = function()
-        if not string.find(vim.fn.getcwd() or "", "fbsource", 1, true) then
+        if not require("core.env").is_fbsource() then
           lint.try_lint()
         end
       end,

@@ -31,7 +31,7 @@ return {
     },
     format_on_save = function(bufnr)
       -- Skip in Meta environments (none-ls handles it there)
-      if string.find(vim.fn.getcwd() or "", "fbsource", 1, true) then
+      if require("core.env").is_fbsource() then
         return false
       end
       return { timeout_ms = 3000, lsp_fallback = true }

@@ -1,4 +1,4 @@
-if string.find(vim.fn.expand(vim.fn.getcwd() or ""), "fbsource", 0) then
+if require("core.env").is_fbsource() then
   return {
     dir = "~/fbsource/fbcode/editor_support/nvim/",
     name = "meta.nvim",

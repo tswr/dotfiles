@@ -4,7 +4,7 @@
 -- `null-ls.nvim` Reloaded, maintained by the community.
 -- Only loaded in Meta (fbsource) environments.
 
-if not string.find(vim.fn.expand(vim.fn.getcwd() or ""), "fbsource", 1, true) then
+if not require("core.env").is_fbsource() then
   return {}
 end
 
