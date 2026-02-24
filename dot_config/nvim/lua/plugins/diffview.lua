@@ -1,5 +1,8 @@
 return {
   "sindrets/diffview.nvim",
+  cond = function()
+    return not require("core.env").is_fbsource()
+  end,
   cmd = { "DiffviewOpen", "DiffviewFileHistory", "DiffviewClose" },
   keys = {
     { "<leader>gd", "<cmd>DiffviewOpen<CR>", desc = "Diffview open" },

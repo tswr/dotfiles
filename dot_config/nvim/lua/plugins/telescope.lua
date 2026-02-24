@@ -102,37 +102,5 @@ return {
     vim.keymap.set("n", "<leader>gb", builtin.git_branches, { desc = "Telescope git branches" })
 
     vim.keymap.set("n", "<leader>fm", "<cmd>Telescope myles<CR>", { desc = "Telescope find files with myles" })
-
-    -- local find_buildfile = function()
-    --   local Job = require("plenary.job")
-    --   local path = vim.api.nvim_buf_get_name(0)
-    --   Job:new({
-    --     command = "buck",
-    --     args = { "query", "buildfile(owner(" .. path .. "))" },
-    --     cwd = "/usr/local/bin",
-    --     env = { PATH = vim.env.PATH },
-    --     on_exit = function(j, return_val)
-    --       print(return_val)
-    --       print(j:result())
-    --     end,
-    --   }):sync()
-    -- end
-
-    local pickers = require("telescope.pickers")
-    local finders = require("telescope.finders")
-    local conf = require("telescope.config").values
-    local jump_to_buck = function(opts)
-      opts = opts or {}
-      local path = vim.api.nvim_buf_get_name(0)
-      pickers
-          .new(opts, {
-            prompt_title = "Jump to BUCK",
-            finder = finders.new_oneshot_job({ "buck", "query", "buildfile(owner(" .. path .. "))" }, opts),
-            sorter = conf.generic_sorter(opts),
-            previewer = conf.cat_previewer,
-          })
-          :find()
-    end
-    vim.keymap.set("n", "<leader>mB", jump_to_buck, { desc = "Jump to BUCK" })
   end,
 }

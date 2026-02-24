@@ -1,5 +1,8 @@
 return {
   "lewis6991/gitsigns.nvim",
+  cond = function()
+    return not require("core.env").is_fbsource()
+  end,
   event = { "BufReadPre", "BufNewFile" },
   opts = {
     signs = {

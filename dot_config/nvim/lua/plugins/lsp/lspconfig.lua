@@ -3,7 +3,6 @@ return {
   event = { "BufRead", "BufNewFile" },
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
-    "nvimtools/none-ls.nvim",
     {
       "folke/lazydev.nvim",
       ft = "lua",
@@ -25,17 +24,20 @@ return {
         vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { buffer = args.buf, desc = "Code action" })
         vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, { buffer = args.buf, desc = "Hover" })
         vim.keymap.set("n", "<leader>lH", vim.lsp.buf.signature_help, { buffer = args.buf, desc = "Signature help" })
-        -- Format-on-save handled by conform.nvim (outside Meta) or none-ls (inside Meta)
+        -- Format-on-save handled by conform.nvim (outside Meta) or linttool@meta (inside Meta)
       end,
     })
 
     if require("core.env").is_fbsource() then
       local meta = require("meta.lsp")
-      require("meta").setup({})
       local servers = {
         "cppls@meta",
         "thriftlsp@meta",
         "buck2@meta",
+        "fb-pyright-ls@meta",
+        "rust-analyzer@meta",
+        "flow@meta",
+        "linttool@meta",
       }
       for _, lsp in ipairs(servers) do
         vim.lsp.config(lsp, {})
