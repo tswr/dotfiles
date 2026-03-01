@@ -47,8 +47,6 @@ set.expandtab = true
 -- Copy indent from current line when starting a new line.
 set.autoindent = true
 
--- Do smart autoindenting when starting a new line.  Works for C-like programs, but can also be used for other languages.
-set.smartindent = true
 
 -- When on, the mouse pointer is hidden when characters are typed.
 set.mousehide = true
