@@ -8,13 +8,13 @@ return {
     { "windwp/nvim-ts-autotag", opts = {} },
     {
       "nvim-treesitter/nvim-treesitter-textobjects",
-      branch = "main",
       config = function()
-        local select = require("nvim-treesitter-textobjects.select")
-        local move = require("nvim-treesitter-textobjects.move")
+        local select = require("nvim-treesitter.textobjects.select")
+        local move = require("nvim-treesitter.textobjects.move")
 
-        require("nvim-treesitter-textobjects").setup({
+        require("nvim-treesitter.configs").setup({ textobjects = {
           select = {
+            enable = true,
             lookahead = true,
             selection_modes = {
               ["@parameter.outer"] = "v",
@@ -24,9 +24,10 @@ return {
             include_surrounding_whitespace = true,
           },
           move = {
+            enable = true,
             set_jumps = true,
           },
-        })
+        }})
 
         -- Select keymaps
         local select_maps = {
